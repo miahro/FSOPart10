@@ -1,5 +1,6 @@
-import { View, Image, StyleSheet } from 'react-native'
-import Text from './Text'
+import { View, Image, StyleSheet, Text } from 'react-native'
+
+//import Text from './Text'
 
 const styles = StyleSheet.create({
   container: {
@@ -92,7 +93,7 @@ export const RepositoryItem = (props) => {
         <Text style={styles.whiteText}> {props.language}</Text>
       </View>
 
-      <View style={styles.rightContent}> 
+      <View style={styles.rightContent}>
         <View style={styles.subContainerRow}>
           <View style={styles.statContainer}>
             <Text style={styles.boldText}>{formatNumber(props.stargazersCount)}</Text>
@@ -111,11 +112,14 @@ export const RepositoryItem = (props) => {
             <Text>Rating</Text>
             </View>
         </View>
-      </View >   
-   </View>    
+      </View >
+   </View>
   </View>
   </View>
-  </View> )
+  </View>
+  )
 };
 
 export default RepositoryItem
+
+

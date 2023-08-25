@@ -1,0 +1,9 @@
+
+import Text from './Text';
+
+export const SignIn = () => {
+  return <Text>The sign-in view</Text>;
+};
+
+
+export default SignIn;

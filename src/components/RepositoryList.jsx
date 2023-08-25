@@ -62,18 +62,18 @@ export const RepositoryList = () => {
       <FlatList
           data={repositories}
           ItemSeparatorComponent={ItemSeparator}
-          renderItem={({item}) => 
-              <RepositoryItem
-                  keyExtractor={item => item.id}
-                  fullName={item.fullName}
-                  description={item.description}
-                  language={item.language}
-                  stargazersCount={item.stargazersCount}
-                  forksCount={item.forksCount}
-                  ratingAverage={item.ratingAverage}
-                  reviewCount={item.reviewCount}
-                  ownerAvatarUrl={item.ownerAvatarUrl}
-              />
+          renderItem={({item}) =>
+            <RepositoryItem
+              keyExtractor={item => item.id}
+              fullName={item.fullName}
+              description={item.description}
+              language={item.language}
+              stargazersCount={item.stargazersCount}
+              forksCount={item.forksCount}
+              ratingAverage={item.ratingAverage}
+              reviewCount={item.reviewCount}
+              ownerAvatarUrl={item.ownerAvatarUrl}
+            />
           }
       />
   );
