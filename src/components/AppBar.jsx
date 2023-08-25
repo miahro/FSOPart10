@@ -11,12 +11,15 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     backgroundColor: '#24292e',
     padding: 12,
+    minHeight: 60,
+    maxHeight: 120,
+    color: 'white',
   },
   appBarText: {
     color: 'white',
     fontSize: 36,
     padding: 10,
-    marginBottom: 20,
+    marginBottom: 5,
   }
 });
 
