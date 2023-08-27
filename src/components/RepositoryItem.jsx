@@ -1,6 +1,6 @@
-import { View, Image, StyleSheet, Text } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native';
 
-//import Text from './Text'
+import Text from './Text';
 
 const styles = StyleSheet.create({
   container: {
@@ -76,7 +76,7 @@ const formatNumber = (statInput) => {
 
 
 export const RepositoryItem = (props) => {
-  console.log(props.ownerAvatarUrl, typeof props.ownerAvatarUrl);
+  //console.log(props.ownerAvatarUrl, typeof props.ownerAvatarUrl);
   return(
   <View style={styles.container}>
     <View style={styles.contentContainer}>

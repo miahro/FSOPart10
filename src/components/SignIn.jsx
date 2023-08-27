@@ -2,6 +2,7 @@ import { Pressable, View, StyleSheet, Text } from 'react-native';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import { FormikTextInput } from './FormikTextInput';
+import { theme } from '../theme';
 
 const styles = StyleSheet.create({
   button: {
@@ -23,6 +24,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     letterSpacing: 0.25,
     color: 'white',
+    fontFamily: theme.fonts.main
   },
 });
 const initialValues = {

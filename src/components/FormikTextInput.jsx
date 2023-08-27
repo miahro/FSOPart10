@@ -3,6 +3,7 @@ import { useField } from 'formik';
 
 import TextInput from './TextInput';
 import Text from './Text';
+import { theme } from '../theme';
 
 const styles = StyleSheet.create({
   inputField: {
@@ -14,6 +15,7 @@ const styles = StyleSheet.create({
     padding: 20,
     marginLeft: 20,
     marginRight: 20,
+    fontFamily: theme.fonts.main,
   },
   inputFieldError: {
     backgroundColor: 'white',
@@ -24,6 +26,7 @@ const styles = StyleSheet.create({
     padding: 20,
     marginLeft: 20,
     marginRight: 20,
+    fontFamily: theme.fonts.main,
   },
   errorText: {
     marginTop: 5,

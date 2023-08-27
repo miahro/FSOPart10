@@ -1,6 +1,7 @@
 import { StyleSheet, Text, Pressable, ScrollView, View } from 'react-native';
 import Constants from 'expo-constants';
 import { Link } from 'react-router-native';
+import { theme } from '../theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,6 +21,7 @@ const styles = StyleSheet.create({
     fontSize: 36,
     padding: 10,
     marginBottom: 5,
+    fontFamily: theme.fonts.main,
   }
 });
 
