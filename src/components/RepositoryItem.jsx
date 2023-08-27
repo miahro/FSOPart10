@@ -1,4 +1,4 @@
-import { View, Image, StyleSheet, Text } from 'react-native'
+import { View, Image, StyleSheet, Text } from 'react-native';
 
 //import Text from './Text'
 
@@ -64,19 +64,19 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 5,
   },
-  })
+  });
 
 const formatNumber = (statInput) => {
   if (statInput > 1000) {
-    return `${Math.round(10*statInput / 1000)/10}k`
+    return `${Math.round(10*statInput / 1000)/10}k`;
   } else {
-    return statInput
+    return statInput;
   }
-}
+};
 
 
 export const RepositoryItem = (props) => {
-  console.log(props.ownerAvatarUrl, typeof props.ownerAvatarUrl)
+  console.log(props.ownerAvatarUrl, typeof props.ownerAvatarUrl);
   return(
   <View style={styles.container}>
     <View style={styles.contentContainer}>
@@ -117,9 +117,9 @@ export const RepositoryItem = (props) => {
   </View>
   </View>
   </View>
-  )
+  );
 };
 
-export default RepositoryItem
+export default RepositoryItem;
 
 

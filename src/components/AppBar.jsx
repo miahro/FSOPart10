@@ -1,6 +1,6 @@
 import { StyleSheet, Text, Pressable, ScrollView, View } from 'react-native';
 import Constants from 'expo-constants';
-import { Link } from 'react-router-native'
+import { Link } from 'react-router-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -38,7 +38,7 @@ export const AppBar = (props) => {
           </Link>
       </ScrollView>
     </View>
-  )
+  );
 };
 
 export default AppBar;
