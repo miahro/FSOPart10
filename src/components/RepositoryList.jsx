@@ -61,12 +61,12 @@ const ItemSeparator = () => <View style={styles.separator} />;
 
 export const RepositoryList = () => {
   const { repositories } = useRepositories();
-  console.log(repositories);
+//  console.log(repositories);
 
   const repositoryNodes = repositories
     ? repositories.edges.map(edge => edge.node)
     : [];
-  console.log(repositories);
+//  console.log(repositories);
 
 
   return (
