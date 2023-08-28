@@ -3,6 +3,7 @@ import { Formik } from 'formik';
 import * as yup from 'yup';
 import { FormikTextInput } from './FormikTextInput';
 import { theme } from '../theme';
+import useSignIn from '../hooks/useSignIn';
 
 const styles = StyleSheet.create({
   button: {
@@ -53,10 +54,22 @@ const SignInForm = ({ onSubmit }) => {
 };
 
 export const SignIn = () => {
-  const onSubmit = (values) => {
-    console.log('onSubmit called');
-    console.log(values);
+
+  const [signIn] = useSignIn();
+
+  const onSubmit = async (values) => {
+    const { username, password } = values;
+    console.log('onSubmit username, password', username, password);
+
+    try {
+      const  data  = await signIn({ username, password });
+      console.log('in component signIn return data:', data);
+    } catch (e) {
+      console.log(e);
+    }
   };
+
+
   return (
   <Formik
     initialValues={initialValues}
