@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     backgroundColor: '#24292e',
     padding: 12,
-    minHeight: 60,
+    minHeight: 120,
     maxHeight: 120,
     color: 'white',
   },
