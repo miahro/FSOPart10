@@ -1,5 +1,5 @@
 import { View, Image, StyleSheet } from 'react-native';
-
+import { formatThousands } from '../utils/formatThousands';
 import Text from './Text';
 
 const styles = StyleSheet.create({
@@ -66,15 +66,6 @@ const styles = StyleSheet.create({
   },
   });
 
-const formatNumber = (statInput) => {
-  if (statInput > 1000) {
-    return `${Math.round(10*statInput / 1000)/10}k`;
-  } else {
-    return statInput;
-  }
-};
-
-
 export const RepositoryItem = (props) => {
   //console.log(props.ownerAvatarUrl, typeof props.ownerAvatarUrl);
   return(
@@ -87,28 +78,28 @@ export const RepositoryItem = (props) => {
           />
         </View>
         <View style={styles.textContainer}>
-          <Text style={styles.nameText}> {props.fullName}</Text>
-          <Text style={styles.text}> {props.description}</Text>
+          <Text style={styles.nameText} testID='fullName'> {props.fullName}</Text>
+          <Text style={styles.text} testID='description'> {props.description}</Text>
           <View style={styles.blueBackground}>
-        <Text style={styles.whiteText}> {props.language}</Text>
+        <Text style={styles.whiteText} testID='language'> {props.language}</Text>
       </View>
 
       <View style={styles.rightContent}>
         <View style={styles.subContainerRow}>
           <View style={styles.statContainer}>
-            <Text style={styles.boldText}>{formatNumber(props.stargazersCount)}</Text>
+            <Text style={styles.boldText} testID='starCount'>{formatThousands(props.stargazersCount)}</Text>
             <Text>Stars</Text>
           </View>
           <View style={styles.statContainer}>
-            <Text style={styles.boldText}>{formatNumber(props.forksCount)}</Text>
+            <Text style={styles.boldText} testID='forkCount'>{formatThousands(props.forksCount)}</Text>
             <Text>Forks</Text>
           </View>
           <View style={styles.statContainer}>
-            <Text style={styles.boldText}>{formatNumber(props.reviewCount)}</Text>
+            <Text style={styles.boldText} testID='reviewCount'>{formatThousands(props.reviewCount)}</Text>
             <Text>Reviews</Text>
           </View>
           <View style={styles.statContainer}>
-            <Text style={styles.boldText}>{formatNumber(props.ratingAverage)}</Text>
+            <Text style={styles.boldText} testID='ratingAverage'>{formatThousands(props.ratingAverage)}</Text>
             <Text>Rating</Text>
             </View>
         </View>
