@@ -1,6 +1,6 @@
-import { ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
-import Constants from "expo-constants";
-import { setContext } from "@apollo/client/link/context";
+import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import Constants from 'expo-constants';
+import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
   // Replace the IP address part with your own IP address!
@@ -15,7 +15,7 @@ const createApolloClient = (authStorage) => {
       return {
         headers: {
           ...headers,
-          authorization: accessToken ? `Bearer ${accessToken}` : "",
+          authorization: accessToken ? `Bearer ${accessToken}` : '',
         },
       };
     } catch (e) {

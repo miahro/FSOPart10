@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { useQuery } from "@apollo/client";
-import { GET_REPOSITORIES } from "../graphql/queries";
+import { useState, useEffect } from 'react';
+import { useQuery } from '@apollo/client';
+import { GET_REPOSITORIES } from '../graphql/queries';
 
 const useRepositories = () => {
   const [repositories, setRepositories] = useState();
@@ -9,7 +9,7 @@ const useRepositories = () => {
 
   const { data, error, loading } = useQuery(GET_REPOSITORIES, {
     variables: [],
-    fetchPolicy: "cache-and-network",
+    fetchPolicy: 'cache-and-network',
   });
 
   const fetchRepositories = async () => {
@@ -18,9 +18,9 @@ const useRepositories = () => {
       //console.log("data found from fetchRepositories, data:", data);
       setRepositories(data.repositories);
     } else {
-      console.log("no data from fetchRepositories");
-      console.log("loading", loading);
-      console.log("error", error);
+      console.log('no data from fetchRepositories');
+      console.log('loading', loading);
+      console.log('error', error);
     }
   };
 

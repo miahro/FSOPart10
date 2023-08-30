@@ -15,6 +15,6 @@
     "react/react-in-jsx-scope": "off",
     "no-trailing-spaces": 2,
     "semi": 2,
-    "quotes": [0, "single"]
+    "quotes": [1, "single"]
   }
 }
