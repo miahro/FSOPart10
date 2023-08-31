@@ -68,6 +68,9 @@ export const AppBar = (props) => {
           <Pressable onPress={handleSignOut} >
             <Text style={styles.appBarText}>Sign Out</Text>
           </Pressable>}
+          <Link to='/repository/jaredpalmer.formik'>
+            <Text style={styles.appBarText}>TEMP LINK</Text>
+          </Link>
       </ScrollView>
     </View>
   );

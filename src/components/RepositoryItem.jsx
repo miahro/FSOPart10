@@ -1,6 +1,9 @@
 import { View, Image, StyleSheet } from 'react-native';
 import { formatThousands } from '../utils/formatThousands';
 import Text from './Text';
+import Button from './Button';
+import * as Linking from 'expo-linking';
+
 
 const styles = StyleSheet.create({
   container: {
@@ -68,6 +71,7 @@ const styles = StyleSheet.create({
 
 export const RepositoryItem = (props) => {
   //console.log(props.ownerAvatarUrl, typeof props.ownerAvatarUrl);
+  console.log(props.gitLink)
   return(
   <View style={styles.container}>
     <View style={styles.contentContainer}>
@@ -82,7 +86,7 @@ export const RepositoryItem = (props) => {
           <Text style={styles.text} testID='description'> {props.description}</Text>
           <View style={styles.blueBackground}>
         <Text style={styles.whiteText} testID='language'> {props.language}</Text>
-      </View>
+        </View>
 
       <View style={styles.rightContent}>
         <View style={styles.subContainerRow}>
@@ -101,11 +105,16 @@ export const RepositoryItem = (props) => {
           <View style={styles.statContainer}>
             <Text style={styles.boldText} testID='ratingAverage'>{formatThousands(props.ratingAverage)}</Text>
             <Text>Rating</Text>
-            </View>
+          </View>
         </View>
+        {props.gitLink &&
+         <Button onPress={()=>Linking.openURL(props.gitLink)}>Open in Github</Button>
+        }
       </View >
    </View>
-  </View>
+
+
+   </View>
   </View>
   </View>
   );
