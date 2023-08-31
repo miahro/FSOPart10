@@ -1,7 +1,7 @@
 import { StyleSheet, Text, Pressable, ScrollView, View } from 'react-native';
 import Constants from 'expo-constants';
 import { Link  } from 'react-router-native';
-import { theme } from '../theme';
+import theme from '../theme';
 import { SIGNED_IN_USER } from '../graphql/queries';
 import { useQuery } from '@apollo/client';
 import AuthStorageContext  from '../contexts/AuthStorageContext';

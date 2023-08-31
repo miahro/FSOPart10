@@ -18,15 +18,7 @@ const RepositoryView = () => {
     <>
     {repository &&
     <RepositoryItem
-              fullName={repository.fullName}
-              description={repository.description}
-              language={repository.language}
-              stargazersCount={repository.stargazersCount}
-              forksCount={repository.forksCount}
-              ratingAverage={repository.ratingAverage}
-              reviewCount={repository.reviewCount}
-              ownerAvatarUrl={repository.ownerAvatarUrl}
-              gitLink={repository.url}
+      repository={repository}
     />
     }
     </>

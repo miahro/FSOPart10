@@ -11,7 +11,7 @@ const useRepository = (id) => {
     },
   });
 
-  // console.log("data: ", data);
+  console.log("data: ", data);
   // console.log("error: ", error);
   // console.log("loading: ", loading);
 
