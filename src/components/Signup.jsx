@@ -35,7 +35,6 @@ const initialValues = {
 };
 
 const validationSchema = yup.object().shape({
-  //password: yup.string().required('Password is required'),
   password: yup.string().min(5).max(30).required('Password 5-30 characters is required'),
   passwordConfirm: yup.string()
      .oneOf([yup.ref('password'), null], 'Passwords differ')
@@ -43,13 +42,6 @@ const validationSchema = yup.object().shape({
   username: yup.string().min(5).max(30).required('Username 5-30 characters is required')
 });
 
-
-
-// const validationSchema = yup.object().shape({
-//   ownerName: yup.string().required('Repository owner is required'),
-//   rating: yup.number().min(0).max(100).required('Rating is required'),
-//   repositoryName: yup.string().required('Repository name is required'),
-// });
 
 const SignupForm = ({ onSubmit }) => {
   return (
