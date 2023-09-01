@@ -69,8 +69,12 @@ export const AppBar = (props) => {
             <Text style={styles.appBarText}>Sign Out</Text>
           </Pressable>}
           <Link to='/repository/jaredpalmer.formik'>
-            <Text style={styles.appBarText}>TEMP LINK</Text>
+            <Text style={styles.appBarText}>TEMP single repo</Text>
           </Link>
+          <Link to='createreview'>
+            <Text style={styles.appBarText}>TEMP create review</Text>
+          </Link>
+
       </ScrollView>
     </View>
   );
