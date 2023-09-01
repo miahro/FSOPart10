@@ -64,6 +64,11 @@ export const AppBar = (props) => {
               <Text style={styles.appBarText}>Sign in</Text>
             </Link>
           }
+          {!signedInUser &&
+            <Link to='signup'>
+              <Text style={styles.appBarText}>Sign up</Text>
+            </Link>
+          }
           {signedInUser &&
             <Link to='createreview'>
             <Text style={styles.appBarText}>Create a review</Text>
