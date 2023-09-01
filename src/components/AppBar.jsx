@@ -65,14 +65,16 @@ export const AppBar = (props) => {
             </Link>
           }
           {signedInUser &&
-          <Pressable onPress={handleSignOut} >
-            <Text style={styles.appBarText}>Sign Out</Text>
-          </Pressable>}
+            <Link to='createreview'>
+            <Text style={styles.appBarText}>Create a review</Text>
+            </Link>}
+
+          {signedInUser &&
+            <Pressable onPress={handleSignOut} >
+              <Text style={styles.appBarText}>Sign Out</Text>
+            </Pressable>}
           <Link to='/repository/jaredpalmer.formik'>
             <Text style={styles.appBarText}>TEMP single repo</Text>
-          </Link>
-          <Link to='createreview'>
-            <Text style={styles.appBarText}>TEMP create review</Text>
           </Link>
 
       </ScrollView>
