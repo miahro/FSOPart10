@@ -4,7 +4,8 @@ import Text from './Text';
 import Button from './Button';
 import * as Linking from 'expo-linking';
 import theme from '../theme';
-import formatDate from '../utils/formatDate';
+//import formatDate from '../utils/formatDate';
+import ReviewItem from './ReviewItem';
 
 const styles = StyleSheet.create({
   container: {
@@ -136,24 +137,24 @@ const RepositoryInfo = ({repository}) => {
 
 };
 
-const ReviewItem = ( {review} ) => {
-  return (
-    <View style={styles.container}>
+// const ReviewItem = ( {review} ) => {
+//   return (
+//     <View style={styles.container}>
 
-      <View style={styles.topContainer}>
-        <View style={styles.ratingContainer}>
-          <Text style={styles.ratingText}>{review.rating}</Text>
-        </View>
-        <View style={styles.contentContainer}>
-          <Text style={styles.nameText} fontWeight='bold'>{review.user.username}</Text>
-          <Text style={styles.descriptionText} color='textSecondary'>{formatDate(review.createdAt)}</Text>
-          <Text style={styles.descriptionText}>{review.text}</Text>
-        </View>
-      </View>
-    </View>
-  );
+//       <View style={styles.topContainer}>
+//         <View style={styles.ratingContainer}>
+//           <Text style={styles.ratingText}>{review.rating}</Text>
+//         </View>
+//         <View style={styles.contentContainer}>
+//           <Text style={styles.nameText} fontWeight='bold'>{review.user.username}</Text>
+//           <Text style={styles.descriptionText} color='textSecondary'>{formatDate(review.createdAt)}</Text>
+//           <Text style={styles.descriptionText}>{review.text}</Text>
+//         </View>
+//       </View>
+//     </View>
+//   );
 
-};
+// };
 
 const RepositoryItem = ({ repository }) => {
 

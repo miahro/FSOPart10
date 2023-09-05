@@ -2,7 +2,7 @@ import { useQuery } from "@apollo/client";
 import { GET_REPOSITORY } from "../graphql/queries";
 
 const useRepository = (id) => {
-  console.log("useRepository called with id: ", id, "typeof which", typeof id);
+  //console.log("useRepository called with id: ", id, "typeof which", typeof id);
 
   const { data, error, loading } = useQuery(GET_REPOSITORY, {
     variables: {
@@ -11,7 +11,7 @@ const useRepository = (id) => {
     },
   });
 
-  console.log("data: ", data);
+  //console.log("data: ", data);
   // console.log("error: ", error);
   // console.log("loading: ", loading);
 

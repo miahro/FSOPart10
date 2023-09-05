@@ -36,10 +36,10 @@ const styles = StyleSheet.create({
 export const AppBar = (props) => {
 
   const { data } = useQuery(SIGNED_IN_USER);
-  console.log('AppBar, data: ',data);
+//  console.log('AppBar, data: ',data);
 
   const signedInUser = data ? data.me : undefined;
-  console.log('signedInUser:', signedInUser);
+//  console.log('signedInUser:', signedInUser);
 
   const authStorage = useContext(AuthStorageContext);
   const apolloClient = useApolloClient();
@@ -47,7 +47,7 @@ export const AppBar = (props) => {
   const handleSignOut = async () => {
     await authStorage.removeAccessToken();
     await apolloClient.resetStore();
-    console.log('sign out handled');
+ //   console.log('sign out handled');
   };
 
 
@@ -73,14 +73,18 @@ export const AppBar = (props) => {
             <Link to='createreview'>
             <Text style={styles.appBarText}>Create a review</Text>
             </Link>}
+            {signedInUser &&
+            <Link to='myreviews'>
+            <Text style={styles.appBarText}>My reviews</Text>
+            </Link>}
 
           {signedInUser &&
             <Pressable onPress={handleSignOut} >
               <Text style={styles.appBarText}>Sign Out</Text>
             </Pressable>}
-          <Link to='/repository/jaredpalmer.formik'>
+          {/* <Link to='/repository/jaredpalmer.formik'>
             <Text style={styles.appBarText}>TEMP single repo</Text>
-          </Link>
+          </Link> */}
 
       </ScrollView>
     </View>

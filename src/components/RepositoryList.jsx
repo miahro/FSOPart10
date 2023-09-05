@@ -1,4 +1,4 @@
-import { FlatList, View, StyleSheet } from 'react-native';
+import { FlatList, View, StyleSheet, Pressable } from 'react-native';
 import { useState } from 'react';
 import RepositoryItem from './RepositoryItem';
 import useRepositories from '../hooks/useRepositories';
@@ -6,12 +6,10 @@ import { Picker } from '@react-native-picker/picker';
 import TextInput from './TextInput';
 import theme from '../theme';
 import { Icon } from 'react-native-elements';
+import { useNavigate } from 'react-router-native';
+import ItemSeparator from './ItemSeparator';
 
 const styles = StyleSheet.create({
-  separator: {
-    height: 10,
-    backgroundColor: 'grey',
-  },
   pickerContainer: {
     fontSize: 16,
     color: 'black',
@@ -81,13 +79,34 @@ export const RepositoryListContainer = ({ repositories }) => {
     : [];
 
 
+  const PressableRepo = ( {repository} ) => {
+    //console.log('pressable repo with repo', repository.id);
+    const id = repository.id;
+    const navigate=useNavigate();
+
+    const onRepositoryPress = () => {
+      //console.log('pressed item: ', id);
+      navigate(`/repository/${id}`);
+    };
+
+    return (
+      <>
+      <Pressable onPress={onRepositoryPress}>
+      <RepositoryItem
+        repository =  { repository }
+      />
+      </Pressable>
+      </>
+    );
+  };
+
 
     return (
       <FlatList
           data={repositoryNodes}
           ItemSeparatorComponent={ItemSeparator}
           renderItem={({item}) =>
-            <RepositoryItem
+            <PressableRepo
               repository =  { item }
             />
           }
@@ -95,14 +114,13 @@ export const RepositoryListContainer = ({ repositories }) => {
   );
         };
 
-const ItemSeparator = () => <View style={styles.separator} />;
 
 const RepositoryList = () => {
   const [sortBy, setSortBy] = useState('latest');
   const [filter, setFilter] = useState('');
   const { repositories } = useRepositories(sortBy, filter);
-  console.log('sortBy', sortBy);
-  console.log('in RepositoryList component repositories', repositories);
+  //console.log('sortBy', sortBy);
+  //console.log('in RepositoryList component repositories', repositories);
 
   const handleFilter = ( value ) => {
     setFilter(value);

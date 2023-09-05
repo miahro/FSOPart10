@@ -5,7 +5,7 @@ import { GET_REPOSITORIES } from '../graphql/queries';
 const useRepositories = (sortBy, filter) => {
   const [repositories, setRepositories] = useState();
   let variables = {};
-  console.log('in useRepositories filter: ', filter, 'typeof', typeof filter);
+  //console.log('in useRepositories filter: ', filter, 'typeof', typeof filter);
 
   switch(sortBy) {
     case "latest":
@@ -31,7 +31,7 @@ const useRepositories = (sortBy, filter) => {
       break;
     }
 
-  console.log('variables: ',variables);
+  //console.log('variables: ',variables);
 
   const { data, error, loading } = useQuery(GET_REPOSITORIES, {
     variables,
@@ -41,7 +41,7 @@ const useRepositories = (sortBy, filter) => {
   const fetchRepositories = async () => {
 
     if (data) {
-      console.log("data found from fetchRepositories, data:", data);
+      //console.log("data found from fetchRepositories, data:", data);
       setRepositories(data.repositories);
     } else {
       console.log('no data from fetchRepositories');
@@ -56,7 +56,7 @@ const useRepositories = (sortBy, filter) => {
     }
   }, [data]);
 
-  console.log('in useRepositories sorting', sortBy);
+  //console.log('in useRepositories sorting', sortBy);
   return { repositories, loading, refetch: fetchRepositories };
 };
 

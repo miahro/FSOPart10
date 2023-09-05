@@ -16,7 +16,7 @@ const useSignIn = () => {
 
   const signIn = async ({ username, password }) => {
     const { data } = await mutate({ variables: { username, password } });
-    console.log('data: ', data);
+    //console.log('data: ', data);
     await authStorage.setAccessToken(data.authenticate.accessToken);
     const temp = await authStorage.getAccessToken();
     console.log('temp: ', temp);
