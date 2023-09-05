@@ -11,7 +11,7 @@ const useMyReviews = () => {
     }
     );
 
-  const reviewNodes = data? data.me.reviews.edges.map((edge) => edge.node) : [];
+  const reviewNodes = data?.me? data.me.reviews.edges.map((edge) => edge.node) : [];
 
   //console.log('useMyReviews returns data: ', reviewNodes);
   return {reviewNodes};

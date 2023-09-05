@@ -37,6 +37,10 @@ export const SIGNED_IN_USER = gql`
               id
               username
             }
+            repositoryId
+            repository {
+              fullName
+            }
           }
         }
       }

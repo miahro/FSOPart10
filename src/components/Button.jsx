@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: theme.colors.primary,
     borderRadius: theme.roundness,
+    flex: 1
   },
   text: {
     color: 'white',

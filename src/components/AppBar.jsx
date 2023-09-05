@@ -8,6 +8,8 @@ import AuthStorageContext  from '../contexts/AuthStorageContext';
 import { useContext } from 'react';
 import { useApolloClient } from '@apollo/client';
 
+//import { useNavigate } from 'react-router-native';
+
 const styles = StyleSheet.create({
   container: {
     paddingTop: Constants.statusBarHeight,
@@ -45,8 +47,11 @@ export const AppBar = (props) => {
   const apolloClient = useApolloClient();
 
   const handleSignOut = async () => {
+    // const navigate = useNavigate();
+    // navigate('/');
     await authStorage.removeAccessToken();
     await apolloClient.resetStore();
+
  //   console.log('sign out handled');
   };
 
