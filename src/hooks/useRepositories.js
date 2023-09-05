@@ -2,27 +2,31 @@ import { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { GET_REPOSITORIES } from '../graphql/queries';
 
-const useRepositories = (sortBy) => {
+const useRepositories = (sortBy, filter) => {
   const [repositories, setRepositories] = useState();
   let variables = {};
+  console.log('in useRepositories filter: ', filter, 'typeof', typeof filter);
 
   switch(sortBy) {
     case "latest":
       variables = {
         orderBy: "CREATED_AT",
-        orderDirection: "DESC"
+        orderDirection: "DESC",
+        filter: filter
       };
       break;
     case "highestRate":
       variables  = {
         orderBy: "RATING_AVERAGE",
-        orderDirection: "DESC"
+        orderDirection: "DESC",
+        filter: filter
       };
       break;
     case "lowestRate":
         variables  = {
           orderBy: "RATING_AVERAGE",
-          orderDirection: "ASC"
+          orderDirection: "ASC",
+          filter: filter
         };
       break;
     }
